@@ -2,3 +2,5 @@
 .venv
 Lecture
 .DS_Store
+__pycache__
+*.db
