@@ -1,5 +1,6 @@
 import discord
 from scraper import Scraper
+import os
 
 intents = discord.Intents.default()
 intents.message_content = True
@@ -43,9 +44,9 @@ async def on_message(message):
       await message.channel.send(embeds=embeds)
 
 # scraper token
-discord_token = "MTI0MTU5NTgxNTY1MTQ0Njg0NA.GUudfd.i7vJ3knngQWHpGRyG0mDwXzv-umnhPtmtDHkHs"  
+discord_token = os.getenv("DISCORD_API_KEY")  
 
 # langchain 스터디 token
-discord_token = "MTI0MTYyODkxNDI5NjgxNTY4OA.GttHxM.0ov8YmU40gcU7CO5zvyUDjx4G7WYKMxwKfLQaw"
+discord_token = os.getenv("DISCORD_API_KEY2")  
 
 client.run(discord_token)
