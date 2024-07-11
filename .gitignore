@@ -8,3 +8,5 @@ Assets
 Examples
 Sample
 Test
+*.gguf
+.cache

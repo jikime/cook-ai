@@ -1,0 +1,22 @@
+FROM ggml-model-Q5_K_M.gguf
+
+TEMPLATE """{{- if .System }}
+<s>{{ .System }}</s>
+{{- end }}
+<s>Human:
+{{ .Prompt }}</s>
+<s>Assistant:
+"""
+
+SYSTEM """A chat between a curious user and an artificial intelligence assistant. The assistant gives helpful, detailed, and polite answers to the user's questions."""
+
+# temperature를 높이면 모델이 더 창의적으로 대답할 수 있다. (기본값: 0.8)
+PARAMETER temperature 0
+# 텍스트를 생성할 때 예측할 최대 토큰 수이다. (기본값: 128, -1 = 무한 생성, -2 = 컨텍스트 채우기)
+PARAMETER num_predict 3000
+# 다음 토큰을 생성하는 데 사용되는 컨텍스트 window의 크기를 설정한다. (기본값: 2048)
+PARAMETER num_ctx 4096
+# 사용할 정지 시퀀스를 설정한다. 이 패턴이 발견되면 LLM은 텍스트 생성을 중단하고 반환된다. 
+# 모델 파일에 여러 개의 별도 정지 매개변수를 지정하여 여러 정지 패턴을 설정할 수 있다.
+PARAMETER stop <s>
+PARAMETER stop </s>
