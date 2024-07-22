@@ -1,0 +1,7 @@
+fastapi
+uvicorn
+langchain==0.2.0
+langchain-openai
+langchain-community
+openai
+faiss-cpu
