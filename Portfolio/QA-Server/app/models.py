@@ -5,4 +5,4 @@ class AnalysisRequest(BaseModel):
     question: str
 
 class AnalysisResult(BaseModel):
-    summary: str
+    contents: str

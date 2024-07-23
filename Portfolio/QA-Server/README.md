@@ -1,5 +1,5 @@
 **서버 실행**
-uvicorn main:app --reload
+uvicorn main:app --reload --port 8888
 
 **클라이언트에서 API 요청**
 http://localhost:8888/api/analyze
