@@ -10,3 +10,4 @@ Sample
 Test
 *.gguf
 .cache
+*.mp3
